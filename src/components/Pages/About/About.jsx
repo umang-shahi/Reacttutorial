@@ -7,7 +7,7 @@ const About = () => {
       <h1>  this is my about page</h1>
     </div>
     </>
-  )
-}
+  );
+};
 
-export default About
+export default About;

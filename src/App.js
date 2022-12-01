@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer";
 import Contact from "./components/Pages/Contact/Contact";
 import PageNotFound from "./components/Pages/Notfound/PageNotFound";
 
+
 function App() {
   return (
     <>
@@ -18,7 +19,7 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>
-        
+
         <Footer />
       </BrowserRouter>
     </>

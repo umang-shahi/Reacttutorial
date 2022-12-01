@@ -7,7 +7,7 @@ const Contact = () => {
       <h1> My contact</h1>
     </div>
     </>
-  )
-}
+  );
+};
 
-export default Contact
+export default Contact;
