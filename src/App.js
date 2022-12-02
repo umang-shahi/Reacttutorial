@@ -6,6 +6,10 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Pages/Contact/Contact";
 import PageNotFound from "./components/Pages/Notfound/PageNotFound";
+import Login from "./components/Pages/User/Login";
+import ProtectedRoute from "./components/Protectedroute/ProtectedRoute";
+
+
 
 
 function App() {
@@ -14,8 +18,15 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route exact path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route exact path="/" element={<ProtectedRoute Component={Home}/>} />
+
+
+          <Route path="/about" element={<About />}/>
+
+          <Route path="/login" element ={<Login/>}/>
+            
+
+
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<PageNotFound />} />
         </Routes>

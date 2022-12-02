@@ -11,7 +11,7 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
   const cssStyle = {
-    width :"60px" 
+    width :"60px" ,
   }
    
   const myStyle ={
@@ -56,13 +56,17 @@ const Header = () => {
               Link
             </Nav.Link>
           </Nav>
-          
           <Form className="d-flex">
-              
-              
-            
-          <Button variant="primary"> Login </Button>{' '}
+
+
+            <NavLink to="/login">
+            <Button variant="primary"> Login </Button>{' '}
+
+            </NavLink>
           </Form>
+          
+
+          
         </Navbar.Collapse>
       </Container>
     </Navbar>
