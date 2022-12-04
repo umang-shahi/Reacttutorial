@@ -7,8 +7,6 @@ import Footer from "./components/Footer/Footer";
 import Contact from "./components/Pages/Contact/Contact";
 import PageNotFound from "./components/Pages/Notfound/PageNotFound";
 import Login from "./components/Pages/User/Login";
-import ProtectedRoute from "./components/Protectedroute/ProtectedRoute";
-
 
 
 
@@ -18,7 +16,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route exact path="/" element={<ProtectedRoute Component={Home}/>} />
+          <Route exact path="/" element={<Home/>} />
 
 
           <Route path="/about" element={<About />}/>
