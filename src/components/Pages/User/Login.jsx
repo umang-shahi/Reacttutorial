@@ -30,7 +30,7 @@ const Login = () => {
     </div>
     <h1> Value:{email}</h1>
     </>
-  )
-}
+  );
+};
 
-export default Login
+export default Login;

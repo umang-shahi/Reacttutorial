@@ -1,71 +1,55 @@
-import React, {useState} from 'react';
+import React from 'react';
+import Cartoon from '../../../image/Cartoon.jpg';
+import { NavLink } from 'react-router-dom';
+import "./Home.css";
+
 
 
 const Home = () => {
   return (
-     <>
-     <div className="myHome">
-        <h1>MY HOME</h1>
-        <RedHOC cmp = {Counter}/>
-        <GreenHOC cmp = {Counter}/>
-        <PurpleHOC cmp = {Counter}/>
-        
+   <>
+    
+    <section id ="header" className="align-items-center">
+      <div className= "container-fluid nav_bg">
+         <div className="row">
+            <div className="col-10-mx-aut0">
+               <div className="row">
+                  <div className="col-md-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex justify-content-center">
+                     <h1>
+                        We started our buisness width
+                        <strong className= "brand-name">HamroKhana</strong>
+                     </h1>
+                     <h5 className="my-3">
+                        We are the team
+                     </h5>
+                     <div className="mt-3">
+                        <NavLink className ="bttn-get-started" to="/">
+                           Get Started
+                        </NavLink>
 
+                     </div>
 
-        
+                   <div className="col-lg-6 order-1 order-lg-2 header-img">
+                     <img 
+                        src={Cartoon}
+                        className = "img-fluid animated "
+                        alt = "home img"
+                        />
 
-     </div>
-     
-     </>
-  )
-}
+                   </div>
 
-const RedHOC = (props) => {
-   return(
-      <>
-      <div>
-         <h1 style= {{ backgroundColor:"red", width:"100px"}}>
-           <props.cmp/>
-         </h1>
+                  </div>
+
+               </div>
+
+            </div>
+         </div>
+
       </div>
-      </>
-   )
-}
+    </section>
+   </> 
+  );
+};
 
-
-const GreenHOC = (props) => {
-   return(
-      <>
-      <div>
-         <h1 style= {{ backgroundColor:"green", width:"100px"}}>
-           <props.cmp/>
-         </h1>
-      </div>
-      </>
-   )
-}
-
-
-const PurpleHOC = (props) => {
-   return(
-      <>
-      <div>
-         <h1 style= {{ backgroundColor:"Purple", width:"100px"}}>
-           <props.cmp/>
-         </h1>
-      </div>
-      </>
-   )
-}
- 
-const Counter =() => {
-   const [count,setCount] = useState(0);
-   return(
-      <>
-      <h1> {count}</h1>
-      <button onClick={()=>setCount(count +1)}>Click me</button>
-      </>
-   )
-}
 
 export default Home;
