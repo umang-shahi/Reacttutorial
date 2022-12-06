@@ -7,6 +7,7 @@ import Footer from "./components/Footer/Footer";
 import Contact from "./components/Pages/Contact/Contact";
 import PageNotFound from "./components/Pages/Notfound/PageNotFound";
 import Login from "./components/Pages/User/Login";
+import Services from "./components/Pages/services/Services";
 
 
 
@@ -23,7 +24,7 @@ function App() {
 
           <Route path="/login" element ={<Login/>}/>
             
-
+          <Route path="/services" element={<Services/>} />
 
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<PageNotFound />} />
