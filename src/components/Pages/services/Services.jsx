@@ -3,6 +3,8 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Customer from '../../../image/Customerservice.png';
 import Deliver from '../../../image/Fastdeliver.png';
+import Onlinep from '../../../image/Onlinepay.png';
+import SelfServe from '../../../image/Selfserve.png';
 
 const Services = () => {
   return (
@@ -48,9 +50,9 @@ const Services = () => {
 
                         <div className ="col-md-3 col-10 mx-auto">
                         <Card >
-      <Card.Img variant="top" src={Customer}/>
+      <Card.Img variant="top" src={Onlinep}/>
       <Card.Body>
-        <Card.Title>Customer Service</Card.Title>
+        <Card.Title>Online Payment</Card.Title>
         <Card.Text>
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
@@ -63,9 +65,9 @@ const Services = () => {
 
                         <div className ="col-md-3 col-10 mx-auto">
                         <Card >
-      <Card.Img variant="top" src={Customer}/>
+      <Card.Img variant="top" src={SelfServe}/>
       <Card.Body>
-        <Card.Title>Customer Service</Card.Title>
+        <Card.Title>Self Service</Card.Title>
         <Card.Text>
           Some quick example text to build on the card title and make up the
           bulk of the card's content.
