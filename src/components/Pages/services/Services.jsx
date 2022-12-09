@@ -1,10 +1,7 @@
 import React from 'react';
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import Customer from '../../../image/Customerservice.png';
-import Deliver from '../../../image/Fastdeliver.png';
-import Onlinep from '../../../image/Onlinepay.png';
-import SelfServe from '../../../image/Selfserve.png';
+
+import { DataCard } from './CardData';
+import MyCard from './MyCard';
 
 const Services = () => {
   return (
@@ -16,77 +13,30 @@ const Services = () => {
         <div className="container-fluid mb-5">
             <div className="row">
                 <div className="col-10 mx-auto">
-                    <div className="row gy-4">
-                        <div className ="col-md-3 col-10 mx-auto">
-                        <Card >
-      <Card.Img variant="top" src={Customer}/>
-      <Card.Body>
-        <Card.Title>Customer Service</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
-                        </div>
+                    <div className="row">
+              
+                     {DataCard.map((curValue)=>{
+                      return(
+                      <MyCard 
+                      key= {curValue.id}
+                      title={curValue.title}
+                      description={curValue.description}
+                      cardImg={curValue.cardImg}
+                      cardBtn={curValue.cardBtn}
+                      visit= {curValue.visit}
+                      />
+                      );
+                     })}
 
 
-                        <div className ="col-md-3 col-10 mx-auto">
-                        <Card >
-      <Card.Img variant="top" src={Deliver}/>
-      <Card.Body>
-        <Card.Title>Fast Delivery</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
-                        </div>
-
-
-
-                        <div className ="col-md-3 col-10 mx-auto">
-                        <Card >
-      <Card.Img variant="top" src={Onlinep}/>
-      <Card.Body>
-        <Card.Title>Online Payment</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
-                        </div>
-
-
-                        <div className ="col-md-3 col-10 mx-auto">
-                        <Card >
-      <Card.Img variant="top" src={SelfServe}/>
-      <Card.Body>
-        <Card.Title>Self Service</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-        <Button variant="primary">Go somewhere</Button>
-      </Card.Body>
-    </Card>
-                        </div>
-
-
-
-         
+                    </div>
                     </div>
 
                 </div>
 
             </div>
 
-        </div>
+        
     </>
   );
 };
