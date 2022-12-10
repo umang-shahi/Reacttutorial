@@ -1,7 +1,7 @@
 import React from 'react';
 import CommonPages from '../commonPages/CommonPages';
 import "./Home.css";
-import Deliver from "../../../image/Cartoon.jpg";
+import Deliver from "../../../image/Homepic.png";
 import { dealData } from '../../constraints/Data';
 import HomeCard from "./HomeCard";
 

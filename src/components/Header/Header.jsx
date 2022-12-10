@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import logo from '../logo.jpeg';
+import Logo from "../../image/logos.png";
 import { NavLink } from "react-router-dom";
 
 
@@ -16,7 +16,7 @@ const Header = () => {
   const myStyle ={
     textDecoration: 'none',
     margin : '8px',
-    color:'gray'
+    color:'black'
 
     
   }
@@ -26,7 +26,7 @@ const Header = () => {
       <Container fluid>
         <div >
          <NavLink to="/">
-         <img style= {cssStyle} src={logo} alt ="logo"/>
+         <img style= {cssStyle} src={Logo} alt ="logo"/>
          </NavLink>
           
         </div>
@@ -38,13 +38,9 @@ const Header = () => {
             navbarScroll
           >
             <NavLink style = {myStyle} to="/about"> About</NavLink>
+
             <NavLink style ={myStyle} to ="/contact"> Contact</NavLink>
 
-
-            
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
           </Nav>
           <Form className="d-flex">
 

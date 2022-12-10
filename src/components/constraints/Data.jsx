@@ -12,19 +12,19 @@ export const dealData= [
   {
      id:"1",
      url: Bricks,
-     title:"bricks cafe and firewood pizza",
+     title:"Bricks cafe and Firewood pizza",
 },
 
 {
     id:"2",
     url:Dhaba, 
-    title:"mittran da dhaba",
+    title:"Mittran da Dhaba",
 },
 
 {
     id:"3",
     url:Eatery,
-    title:"the workshop eatery",
+    title:"The workshop Eatery",
 },
 
 {
@@ -36,19 +36,19 @@ export const dealData= [
 {
     id:"5",
     url:Pizzeria,
-    title:"the pizzeria",
+    title:"The Pizzeria",
 },
 
 {
     id:"6",
     url:Soma,
-    title:" soma pizza",
+    title:" Soma Pizza",
 },
 
 {
     id:"7",
     url:Trio,
-    title:"trio burger",
+    title:"Trio Burger",
 },
 
 {

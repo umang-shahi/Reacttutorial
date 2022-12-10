@@ -16,6 +16,7 @@ function App() {
     <>
       <BrowserRouter>
         <Header />
+        
         <Routes>
           <Route exact path="/" element={<Home/>} />
 
@@ -27,6 +28,7 @@ function App() {
           <Route path="/services" element={<Services/>} />
 
           <Route path="/contact" element={<Contact />} />
+          
           <Route path="*" element={<PageNotFound />} />
         </Routes>
 
