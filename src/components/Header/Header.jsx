@@ -45,8 +45,8 @@ const Header = () => {
           <Form className="d-flex">
 
 
-            <NavLink to="/login">
-            <Button variant="primary"> Login </Button>{' '}
+            <NavLink to="/register">
+            <Button variant="primary"> Sign in </Button>{' '}
 
             </NavLink>
           </Form>

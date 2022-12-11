@@ -8,6 +8,7 @@ import Contact from "./components/Pages/Contact/Contact";
 import PageNotFound from "./components/Pages/Notfound/PageNotFound";
 import Login from "./components/Pages/User/Login";
 import Services from "./components/Pages/services/Services";
+import Register from "./components/Pages/User/Register";
 
 
 
@@ -30,6 +31,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           
           <Route path="*" element={<PageNotFound />} />
+
+          <Route path="/register" element={<Register/>}/>
         </Routes>
 
         <Footer />
