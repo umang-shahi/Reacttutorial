@@ -26,17 +26,19 @@ const Home = () => {
         <div className="row gy-4">
           <div className="col-10 mx-auto">
             <div className="row gy-4">
-              
-              {dealData.map((curValue) => {
-                return(
-                  <HomeCard
-                  key ={curValue.id}
-                  title={curValue.title}
-                  url={curValue.url}
-                  />
-                )
-              })}
+                
+                {dealData.map((curValue)=> {
+                  return(
+                    <HomeCard
+                    key={curValue.id}
+                    title={curValue.title}
+                    url={curValue.url}
+                    />
 
+                  )
+                })
+
+                }
 
             </div>
           </div>
