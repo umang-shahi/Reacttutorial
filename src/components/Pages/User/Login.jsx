@@ -1,26 +1,28 @@
 
-import React ,{ useEffect} from 'react';
+import React,{memo} from "react";
 
 
 
 
-const Login = (props) => {
+const Login = ({todos,AddTodo}) => {
+  console.log("runs,chalyo");
    
    
-    useEffect(()=>{
-      alert(`Count number is:${props.count}`);
-       
-
-    },[props.count]);
+   
     
   return (
     <>
     <div>
-      <h1>{props.count}</h1>
-      <h1>{props.data}</h1>
+      <h2>Add to Do</h2>
+      {todos.map((curValue,index) => {
+        return <p key={index}>{curValue + index}</p>
+      })}
+       
       </div>
+
+      <button onClick={AddTodo}>Add Todo</button>
     </>
   );
 };
 
-export default Login;
+export default memo(Login);

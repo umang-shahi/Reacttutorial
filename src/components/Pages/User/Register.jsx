@@ -1,37 +1,42 @@
-import React,{useState} from 'react';
-import {useEffect} from 'react';
+import React ,{useState} from 'react';
+import Login from "./Login";
+import {useCallback} from "react";
 
 
 
-const Register = () => {
+
+const Register = (() => {
    
   const [count,setCount] = useState(0);
+  const [todos,setTodo] =useState([]);
+     
 
-  useEffect(()=>{
-    console.log("use effect runs!");
 
-    const interval =setInterval(()=>{
-      setCount((prev) => prev + 5);
-    },1000);
+  const handleIncrement = () =>{
+    setCount(count+1);
+  }
+  
+   const AddTodo =useCallback(() => {
+    setTodo((prev)=>[...prev,`new Entry`]);
 
-    return()=>{
-      clearInterval(interval);
-      console.log("cleaning the effect!");
-    }
-
+   },[todos]);
     
-  },[])
+  
    
     
   return (
     <>
       <div>
-        <h1>Counts:{count}cleaning return function</h1>
+        <Login todos={todos} AddTodo={AddTodo} />
+        <hr/>
+        <h1>{count}</h1>
+        <button onClick={handleIncrement}>+</button>
       </div>
       <br/>
     
     </>
-  )}
+  )
+})
 
 
 export default Register;
