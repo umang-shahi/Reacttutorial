@@ -1,27 +1,34 @@
-import React,{useState} from 'react'
+import React,{useState} from 'react';
 import {useEffect} from 'react';
-import Login from './Login';
+
 
 
 const Register = () => {
-    const [count,setCount] = useState(0);
-    const [data,setData] = useState(10);
+   
+  const [count,setCount] = useState(0);
 
-    useEffect(()=>{
-      alert(`count number is:${count}`);
-    },[count,data]);
+  useEffect(()=>{
+    console.log("use effect runs!");
 
-    useEffect(()=>{
-      alert(`count number is:${count}`);
-    },[count]);
+    const interval =setInterval(()=>{
+      setCount((prev) => prev + 5);
+    },1000);
+
+    return()=>{
+      clearInterval(interval);
+      console.log("cleaning the effect!");
+    }
+
+    
+  },[])
+   
     
   return (
     <>
-    <div>
-    <Login count={count} data={data}/>
-     <button onClick={()=>setCount(count+1)}> Update count</button>
-     <button onClick={()=>setData(data+1)}> Update data</button>
-    </div>
+      <div>
+        <h1>Counts:{count}cleaning return function</h1>
+      </div>
+      <br/>
     
     </>
   )}
