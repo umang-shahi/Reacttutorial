@@ -15,7 +15,7 @@ const Services = () => {
                 <div className="col-10 mx-auto">
                     <div className="row">
               
-                     {DataCard.map((curValue)=>{
+                    {DataCard.map((curValue)=>{
                       return(
                       <MyCard 
                       key= {curValue.id}
@@ -24,6 +24,10 @@ const Services = () => {
                       cardImg={curValue.cardImg}
                       cardBtn={curValue.cardBtn}
                       visit= {curValue.visit}
+
+                      
+                     
+                    
                       />
                       );
                      })}

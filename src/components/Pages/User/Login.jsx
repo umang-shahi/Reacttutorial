@@ -5,7 +5,10 @@ import React,{memo} from "react";
 
 
 const Login = ({todos,AddTodo}) => {
+
   console.log("runs,chalyo");
+
+
    
    
    
@@ -15,8 +18,11 @@ const Login = ({todos,AddTodo}) => {
     <div>
       
       <h2>Add to Do</h2>
+
       {todos.map((curValue,index) => {
         return <p key={index}>{curValue + index}</p>
+        
+
       })}
        
       </div>

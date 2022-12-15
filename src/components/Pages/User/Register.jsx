@@ -1,38 +1,41 @@
 import React ,{useState} from 'react';
-import Login from "./Login";
-import {useCallback} from "react";
-
-
-
 
 const Register = (() => {
-   
-  const [count,setCount] = useState(0);
-  const [todos,setTodo] =useState([]);
-     
 
+  let purple="purple";
 
-  const handleIncrement = () =>{
-    setCount(count+1);
+    const [bg,setBg] = useState(purple);
+    const [name,setName] = useState("Click me");
+
+  const handleClick =()=>{
+    let newBg ="gray";
+    setBg(newBg);
+    setName("Ops!");
+
+  };
+
+  const handleDouble =() =>{
+    setBg(purple);
+    setName("oh really");
+
+  } 
+
+  const handleChange =(e)=>{
+    console.log(e.target.value);
   }
-  
-   const AddTodo =useCallback(() => {
-    setTodo((prev)=>[...prev,`new Entry`]);
-
-   },[todos]);
-    
-  
    
-    
-  return (
+ return (
     <>
-      <div>
-        <Login todos={todos} AddTodo={AddTodo} />
-        <hr/>
-        <h1>{count}</h1>
-        <button onClick={handleIncrement}>+</button>
+      <div style={{ backgroundColor: bg }}>
+       <button onClick={handleClick}  onDoubleClick={handleDouble}>{name}</button>
+
+       
       </div>
+
       <br/>
+      <input type="text" onChange={handleChange}/>
+      <br/>
+      
     
     </>
   )
