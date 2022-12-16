@@ -1,40 +1,38 @@
-import React ,{useState} from 'react';
+import React  from 'react';
+import {useEffect, useState} from "react";
+import axios from "axios";
 
 const Register = (() => {
 
-  let purple="purple";
+  const [myData,setMyData] = useState([])
 
-    const [bg,setBg] = useState(purple);
-    const [name,setName] = useState("Click me");
+  useEffect(()=>{
+    axios
+    .get("https://jsonplaceholder.typicode.com/posts")
+    .then((res)=>setMyData(res.data))
+    .catch((error)=>console.log(error));
+  },[])
 
-  const handleClick =()=>{
-    let newBg ="gray";
-    setBg(newBg);
-    setName("Ops!");
-
-  };
-
-  const handleDouble =() =>{
-    setBg(purple);
-    setName("oh really");
-
-  } 
-
-  const handleChange =(e)=>{
-    console.log(e.target.value);
-  }
+  
+ 
    
  return (
     <>
-      <div style={{ backgroundColor: bg }}>
-       <button onClick={handleClick}  onDoubleClick={handleDouble}>{name}</button>
-
+      <div>
+        {
+          myData.map((curValue)=>{
+            return(
+              <div className="card" key ={curValue.id}>
+              <h1>{curValue.title}</h1>
+              <p>{curValue.body}</p>
+              </div>
+            )
+          })
+        }
        
       </div>
 
-      <br/>
-      <input type="text" onChange={handleChange}/>
-      <br/>
+     
       
     
     </>
