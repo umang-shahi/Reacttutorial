@@ -6,9 +6,11 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Contact from "./components/Pages/Contact/Contact";
 import PageNotFound from "./components/Pages/Notfound/PageNotFound";
-import Login from "./components/Pages/User/Login";
 import Services from "./components/Pages/services/Services";
 import Register from "./components/Pages/User/Register";
+import { ToastContainer } from 'react-toastify';
+import Login from "./components/Pages/User/login/Login";
+import Profile from "./components/Pages/User/profile/Profile";
 
 
 
@@ -16,6 +18,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+      <ToastContainer position ="bottom-right" />
         <Header />
         
         <Routes>
@@ -24,7 +27,6 @@ function App() {
 
           <Route path="/about" element={<About />}/>
 
-          <Route path="/login" element ={<Login/>}/>
             
           <Route path="/services" element={<Services/>} />
 
@@ -33,6 +35,9 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
 
           <Route path="/register" element={<Register/>}/>
+          <Route path="/login" element={<Login/>}/>
+          <Route path="/profile" element={<Profile/>}/>
+
         </Routes>
 
         <Footer />
