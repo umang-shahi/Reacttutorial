@@ -6,11 +6,11 @@ import Nav from 'react-bootstrap/Nav';
 import {toast} from "react-toastify"
 import Navbar from 'react-bootstrap/Navbar';
 import Logo from "../../image/logos.png";
-import { NavLink } from "react-router-dom";
+import { NavLink,useNavigate } from "react-router-dom";
 
 
 const Header = () => {
-  
+  const navigate = useNavigate()
   const auth = localStorage.getItem("user")
   const cssStyle = {
     width :"60px" ,
@@ -20,13 +20,13 @@ const Header = () => {
     textDecoration: 'none',
     margin : '8px',
     color:'black'
-
     
   }
 
   const handleLogout =()=>{
     toast.success("logout successfully!")
     localStorage.clear();
+    navigate("/login")
    
   }
   return (
@@ -58,7 +58,7 @@ const Header = () => {
               <>
               <img style={{borderRadius:"50%", width:"30px"}} src={`http://localhost:5000/gallery/${JSON.parse(auth).avatar}`} alt="my profile"/>
               <NavLink style={{textDecoration:"none"}}>{JSON.parse(auth).fullName}</NavLink>
-              <NavLink to="/login" onClick={handleLogout} style={{textDecoration:"none"}}>Logout</NavLink>
+              <button onClick={handleLogout} style={{textDecoration:"none"}}>Logout</button>
 
               </>
             ):(

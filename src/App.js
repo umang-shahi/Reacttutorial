@@ -11,6 +11,8 @@ import Register from "./components/Pages/User/Register";
 import { ToastContainer } from 'react-toastify';
 import Login from "./components/Pages/User/login/Login";
 import Profile from "./components/Pages/User/profile/Profile";
+import UpdateProfile from "./components/Pages/User/updateProfile/UpdateProfile";
+import ProtectedRoute from "./components/protectedroute/ProtectedRoute";
 
 
 
@@ -36,7 +38,14 @@ function App() {
 
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>}/>
-          <Route path="/profile" element={<Profile/>}/>
+
+          <Route path="/profile" element={<ProtectedRoute>
+            <Profile/>
+          </ProtectedRoute>}/>
+          <Route path="/profile/update" element={<ProtectedRoute>
+            <UpdateProfile/>
+          </ProtectedRoute>}/>
+
 
         </Routes>
 
