@@ -39,12 +39,20 @@ const Login = () => {
           email,
           password,
         });
-        if (res.data.success === true) {
+        console.log(res)
+        if (res.data.data.role === "admin") {
+          toast.success(res.data.message);
+          localStorage.setItem("token", res.data.token);
+          localStorage.setItem("user", JSON.stringify(res.data.data));
+          navigate("/admin/dashboard");
+          setIsLoading(false);
+        }else{
           toast.success(res.data.message);
           localStorage.setItem("token", res.data.token);
           localStorage.setItem("user", JSON.stringify(res.data.data));
           navigate("/profile");
           setIsLoading(false);
+
         }
       } catch (error) {
         const msg = await error.response.data.message;

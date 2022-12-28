@@ -190,10 +190,6 @@ const Register = (() => {
         </form>
       </div>
       <br />
-
-
-     
-      
     
     </>
   )

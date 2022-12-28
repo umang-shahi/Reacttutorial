@@ -13,6 +13,7 @@ import Login from "./components/Pages/User/login/Login";
 import Profile from "./components/Pages/User/profile/Profile";
 import UpdateProfile from "./components/Pages/User/updateProfile/UpdateProfile";
 import ProtectedRoute from "./components/protectedroute/ProtectedRoute";
+import Admin from "./components/admin/Admin";
 
 
 
@@ -46,6 +47,10 @@ function App() {
             <UpdateProfile/>
           </ProtectedRoute>}/>
 
+          <Route path="/admin/dashboard" element={<ProtectedRoute>
+            <Admin />
+          </ProtectedRoute>}
+          />
 
         </Routes>
 
