@@ -58,7 +58,7 @@ const Header = () => {
               <>
               <img style={{borderRadius:"50%", width:"30px"}} src={`http://localhost:5000/gallery/${JSON.parse(auth).avatar}`} alt="my profile"/>
               <NavLink style={{textDecoration:"none"}}>{JSON.parse(auth).fullName}</NavLink>
-              <button onClick={handleLogout} style={{textDecoration:"none"}}>Logout</button>
+              <button className='myLogout'  onClick={handleLogout}>Logout</button>
 
               </>
             ):(

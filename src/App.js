@@ -40,12 +40,11 @@ function App() {
           <Route path="/register" element={<Register/>}/>
           <Route path="/login" element={<Login/>}/>
 
-          <Route path="/profile" element={<ProtectedRoute>
-            <Profile/>
-          </ProtectedRoute>}/>
-          <Route path="/profile/update" element={<ProtectedRoute>
-            <UpdateProfile/>
-          </ProtectedRoute>}/>
+          <Route element={<ProtectedRoute />}>
+            <Route path="/profile" element={<Profile />}/>
+            <Route path="/profile/update" element={<UpdateProfile />}/>
+
+          </Route>
 
           <Route path="/admin/dashboard" element={<ProtectedRoute>
             <Admin />

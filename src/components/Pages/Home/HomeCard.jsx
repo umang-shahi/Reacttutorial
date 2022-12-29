@@ -2,19 +2,20 @@ import React from 'react';
 import Card from "react-bootstrap/Card";
 import { NavLink } from 'react-router-dom';
 
-const HomeCard = (props) => {
+const HomeCard = ({food}) => {
+  const {foodTitle,foodImage} = food
   return (
     <>
     <div className="col-md-3 col-10 mx-auto">
    <Card >
     
     <NavLink to="/services">
-      <Card.Img variant="top" src={props.url} alt="Dealimg"/>
+      <Card.Img variant="top" src={`http://localhost:5000/gallery/${foodImage}`} alt="Dealimg"/>
       </NavLink>
 
       <Card.Body>
 
-        <Card.Title>{props.title}</Card.Title>
+        <Card.Title>{foodTitle}</Card.Title>
 
        
       </Card.Body>
